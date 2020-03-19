@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import {Test} from '@/api/test.js'
 export default {
   name: 'Home',
   data () {
@@ -14,6 +14,13 @@ export default {
     }
   },
   mounted() {
+    let data = {
+      username: 'cehnlin',
+      password: 111
+    }
+    Test(data).then(res=>{
+      console.log(res)
+    })
     this.show = true
     setTimeout(()=>{
       this.show = false
