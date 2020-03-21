@@ -1,7 +1,7 @@
-import Axios from '@/request/index'
+import Ruquest from '@/request/index'
 
 export const Test = (data)=> {
-    return Axios.request({
+    return Ruquest({
         url:'/api/webUser/login',
         data
     })
