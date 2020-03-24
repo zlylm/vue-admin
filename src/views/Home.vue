@@ -3,8 +3,8 @@
     <Sidebar :collapseVal="collapseVal"/>
     <div class="right">
       <div class="navbar">
-        <i class="el-icon-s-unfold icon" v-if="collapseVal" @click="collapseVal=false"></i>
-        <i class="el-icon-s-fold icon" v-else @click="collapseVal=true"></i>
+        <i class="el-icon-s-unfold icon" v-if="collapseVal" @click="collapseClick(false)"></i>
+        <i class="el-icon-s-fold icon" v-else @click="collapseClick(true)"></i>
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
             <div class="head-img">
@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import {Test} from '@/api/test.js'
 import Sidebar from '@/common/Sidebar.vue'
 export default {
   name: 'Home',
@@ -37,21 +36,21 @@ export default {
   data () {
     return {
       show: false,
-      collapseVal: false
+      collapseVal: ''
     }
   },
+  created() {
+    this.collapseVal = this.$store.state.collapseVal == 'true' ? true : false
+  },
   mounted() {
-    let data = {
-      username: 'cehnlin',
-      password: 111
+   
+  },
+  methods: {
+    collapseClick(val){
+      this.collapseVal = val
+      sessionStorage.setItem('collapseVal',val)
+      this.$store.commit('setCollapseVal',val)
     }
-    // Test(data).then(res=>{
-    //   console.log(res)
-    // })
-    // this.show = true
-    // setTimeout(()=>{
-    //   this.show = false
-    // },1000)
   }
 }
 </script>
