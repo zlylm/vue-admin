@@ -8,12 +8,12 @@
         <el-row :gutter="20">
             <el-col :md="12" >
                 <div class="chart-box">
-                    <LineChart className="zhexian" :chartData="chartData"/>
+                    <LineChart className="zhexian" :chartData="chartData" :resize="resize"/>
                 </div>
             </el-col>
             <el-col :md="12">
                 <div class="chart-box">
-                    <BarChart className="zhuzhuang" :chartData="barData"/>
+                    <BarChart className="zhuzhuang" :chartData="barData" :resize="resize"/>
                 </div>
             </el-col>
         </el-row>
@@ -46,7 +46,13 @@ export default {
             barData: {
                 userCount:[2,4,10,8,9,3],
                 xData: ['1月','2月','3月','4月','5月','6月']
-            }
+            },
+            resize:false
+        }
+    },
+    watch: {
+        '$store.state.collapseVal':function(){
+            this.resize = !this.resize
         }
     },
     mounted() {

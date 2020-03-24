@@ -25,6 +25,10 @@ export default {
         },
         chartData: {
             type: Object
+        },
+        resize: {
+            type: Boolean,
+            default: false
         }
     },
     data () {
@@ -67,7 +71,10 @@ export default {
            hanlder(val) {
                this.setOptions(val)
            }
-       } 
+       },
+       'resize':function(val){
+            this.chart.resize()
+       }
     },
     beforeDestroy() { // 销毁
         if (!this.chart) {
