@@ -1,7 +1,7 @@
 <template>
   <div class="home" v-viewLoading="show">
     <Sidebar :collapseVal="collapseVal"/>
-    <div class="right">
+    <div class="right" :class="{rightActive:collapseVal}">
       <div class="navbar">
         <i class="el-icon-s-unfold icon" v-if="collapseVal" @click="collapseClick(false)"></i>
         <i class="el-icon-s-fold icon" v-else @click="collapseClick(true)"></i>
@@ -60,9 +60,12 @@ export default {
   height: 100%;
   position: relative;
   background-color: #eff1f4;
-  display: flex;
+  .rightActive{
+    margin-left: 64px!important;
+  }
   .right{
-    flex: 1;
+    transition: margin-left 0.5s;
+    margin-left: 210px;
     .navbar{
       display: flex;
       align-items: center;

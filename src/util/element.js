@@ -13,7 +13,12 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
-    Notification
+    Notification,
+    Table,
+    TableColumn,
+    Tag,
+    Select,
+    Option
 } from 'element-ui'
 
 Vue.prototype.$Message = Message
@@ -29,3 +34,8 @@ Vue.use(Col)
 Vue.use(Dropdown)
 Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Tag)
+Vue.use(Select)
+Vue.use(Option)

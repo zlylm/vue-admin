@@ -16,7 +16,8 @@ const routes = [
     name: 'Index',
     component: Home,
     children:[
-      {path: '/index', component: ()=> import('@/views/index/Index')}
+      {path: '/index', component: ()=> import('@/views/index/Index')},
+      {path: '/user', component: ()=> import('@/views/user/Index')}
     ]
   },
   {

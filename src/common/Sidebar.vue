@@ -50,6 +50,9 @@ export default {
 .side-bar{
     width: 210px;
     height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     .el-menu-vertical{
         height: 100%;
         .icon{
