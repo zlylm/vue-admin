@@ -43,8 +43,10 @@ export default {
                 if (valid) {
                     this.commitLoading = true
                     setTimeout(()=>{
+                        sessionStorage.setItem('isToken','666')
                         this.$Message.success('登录成功')
                         this.commitLoading = false
+                        this.$router.push('/')
                     },2000)
                 }
             })

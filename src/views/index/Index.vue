@@ -56,10 +56,10 @@ export default {
         }
     },
     mounted() {
-        this.$notify.info({
-            title: '消息提示',
-            message: '嗨，欢迎您~'
-        })
+        // this.$notify.info({
+        //     title: '消息提示',
+        //     message: '嗨，欢迎您~'
+        // })
     }
 }
 </script>

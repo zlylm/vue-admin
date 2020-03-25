@@ -5,6 +5,7 @@ import store from './store'
 import 'normalize.css/normalize.css' // CSS resets
 import './util/cutom-instruction' // 自定义指令
 import './util/element' //按需加载element ui
+import './guard' // 守卫
 
 Vue.prototype.$ELEMENT = { size: 'medium', zIndex: 3000 };
 
